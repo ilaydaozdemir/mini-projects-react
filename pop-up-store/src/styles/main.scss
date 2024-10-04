@@ -1,0 +1,6 @@
+@import "./colors";
+body {
+  box-sizing: border-box;
+  margin: 8px;
+  background-color: var(--default-main-color, $main-color);
+}
