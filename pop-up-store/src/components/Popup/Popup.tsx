@@ -23,7 +23,7 @@ const Popup = (props: PopupProps) => {
             <span className="title">{props.title}</span>
           </div>
           <button className="close-button" onClick={handleClose}>
-            <i>icon x</i>
+            <i>x</i>
           </button>
         </div>
         <hr />

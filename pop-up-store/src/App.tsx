@@ -3,61 +3,63 @@ import Header from "./components/Header/Header";
 import Popup from "./components/Popup/Popup";
 
 import "./components/Popup/data";
+
 function App() {
-  // Popup'ı açıp kapatmak için state
   const [isPopupVisible, setIsPopupVisible] = useState(false);
+  const [currentPopup, setCurrentPopup] = useState<any | null>(null);
 
-  const showPopup = () => {
-    setIsPopupVisible(true);
+  const popupData = [
+    {
+      id: 1,
+      className: "success",
+      icon: "✔",
+      title: "Success",
+      describtion: "Operation completed successfully.",
+    },
+    {
+      id: 2,
+      className: "error",
+      icon: "✘",
+      title: "Error",
+      describtion: "An error has occurred.",
+    },
+    {
+      id: 3,
+      className: "warning",
+      icon: "⚠",
+      title: "Warning",
+      describtion: "Please proceed with caution.",
+    },
+    {
+      id: 4,
+      className: "info",
+      icon: "ℹ",
+      title: "Information",
+      describtion: "This is an informational message.",
+    },
+  ];
+  const showRandomPopup = () => {
+    const randomIndex = Math.floor(Math.random() * popupData.length);
+    const randomPopup = popupData[randomIndex];
+
+    if (randomPopup !== currentPopup) {
+      setCurrentPopup(randomPopup);
+    }
   };
-
   const closePopup = () => {
     setIsPopupVisible(false);
   };
 
-  const PopupInfoData = [
-    {
-      id: 1,
-      className: "Success",
-      icon: "s-icon",
-      title: "SUCCESS",
-      describtion: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      id: 2,
-      className: "Error",
-      icon: "e-icon",
-      title: "ERROR",
-      describtion: "Something went wrong, please try again later.",
-    },
-    {
-      id: 3,
-      className: "Warning",
-      icon: "w-icon",
-      title: "WARNING",
-      describtion: "Be cautious, this action might have consequences.",
-    },
-    {
-      id: 4,
-      className: "Info",
-      icon: "i-icon",
-      title: "INFO",
-      describtion: "Here is some useful information for you.",
-    },
-  ];
-
   return (
     <div className="App">
-      <Header onClick={showPopup} />
-
-      {/* Popup bileşenini sadece isPopupVisible true olduğunda göster */}
-      {isPopupVisible && (
+      <Header onClick={showRandomPopup} />
+      {isPopupVisible && currentPopup && (
         <Popup
-          id={1}
-          className="popup"
-          icon="✔"
-          title="SUCCESS"
-          describtion="Operation completed successfully."
+          id={currentPopup.id}
+          className={currentPopup.className}
+          icon={currentPopup.icon}
+          title={currentPopup.title}
+          describtion={currentPopup.describtion}
           onClick={closePopup}
         />
       )}
