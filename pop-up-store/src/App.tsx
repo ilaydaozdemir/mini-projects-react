@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header/Header";
 import Popup from "./components/Popup/Popup";
-
-import "./components/Popup/data";
+import Editor from "./components/Editor/Editor";
 
 function App() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -54,6 +53,7 @@ function App() {
   return (
     <div className="App">
       <Header onClick={showRandomPopup} />
+      <Editor />
       {isPopupVisible && currentPopup && (
         <Popup
           id={currentPopup.id}

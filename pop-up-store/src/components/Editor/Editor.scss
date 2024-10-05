@@ -1,0 +1,17 @@
+@import "../../styles/colors";
+
+.editor-main {
+  padding: 1rem;
+}
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 2px;
+  padding: 3px;
+}
+.editor-text {
+  height: 15rem;
+  padding: 2px;
+  margin-top: 4px;
+}
