@@ -14,10 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `TO DO`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1 ✓Add an editor component that includes text alignment, special character insertion, font style selection, the ability to add superscript and subscript, and link insertion (a modal should open, and the link must be required with validation).
+2 ✓After that, when the "Save" button is clicked, if a link hasn’t been added, a fail popup should be displayed; otherwise, it should show a random popup.
 
 ### `npm run build`
 
