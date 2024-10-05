@@ -44,6 +44,7 @@ function App() {
 
     if (randomPopup !== currentPopup) {
       setCurrentPopup(randomPopup);
+      setIsPopupVisible(true);
     }
   };
   const closePopup = () => {
