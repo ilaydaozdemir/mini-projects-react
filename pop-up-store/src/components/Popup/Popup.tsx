@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Popup.scss";
-const Popup = () => {
+
+export type PopupProps = {
+  id: number;
+  className: string;
+  icon: string;
+  title: string;
+  describtion: string;
+  onClick: () => void;
+};
+const Popup = (props: PopupProps) => {
+  const handleClose = () => {
+    props.onClick(); // Parent'tan gelen kapatma fonksiyonu
+  };
+
   return (
-    <div className="popup-container">
+    <div className={props.className}>
       <div className="popup-inner-container">
         <div className="popup-header">
           <div className="popup-title">
-            <i className="icon">icon</i>
-            <span className="title">Title</span>
+            <i className="icon">{props.icon}</i>
+            <span className="title">{props.title}</span>
           </div>
-          <button className="close-button">
+          <button className="close-button" onClick={handleClose}>
             <i>icon x</i>
           </button>
         </div>
         <hr />
-        <div className="popup-description">description</div>
+        <div className="popup-description">{props.describtion}</div>
       </div>
     </div>
   );
