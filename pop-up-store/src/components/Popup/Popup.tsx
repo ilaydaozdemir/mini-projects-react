@@ -15,8 +15,8 @@ const Popup = (props: PopupProps) => {
   };
 
   return (
-    <div className={props.className}>
-      <div className="popup-inner-container">
+    <div className="popup-inner-container">
+      <div className={props.className}>
         <div className="popup-header">
           <div className="popup-title">
             <i className="icon">{props.icon}</i>

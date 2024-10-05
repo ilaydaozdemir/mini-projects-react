@@ -1,15 +1,18 @@
-.popup-container {
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 100vh;
+.popup-inner-container {
+  position: fixed; /* Sabit pozisyon için */
+  bottom: 20px;
+  right: 20px;
   opacity: 0.85;
   color: var(--default-white, white);
+  width: max-content;
+  display: flex;
+  justify-content: end;
+  padding: 20px;
 }
 .popup-header {
   display: flex;
   justify-content: space-between;
+  width: 100%;
   button {
     color: var(--default-black, black);
     border: none;
