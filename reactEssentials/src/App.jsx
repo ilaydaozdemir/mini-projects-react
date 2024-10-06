@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { CORE_CONCEPTS } from "./data.js";
 
@@ -7,8 +7,9 @@ import CoreConcepts from "./components/CoreConcepts.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
+  const [selectTab, setSelectTab] = useState("Please click button");
   const onHandleSelect = (selectedButton) => {
-    console.log(selectedButton);
+    setSelectTab(selectedButton);
   };
   return (
     <div>
@@ -37,6 +38,7 @@ function App() {
               State
             </TabButton>
           </menu>
+          {selectTab}
         </section>
       </main>
     </div>
