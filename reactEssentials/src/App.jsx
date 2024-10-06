@@ -7,8 +7,8 @@ import CoreConcepts from "./components/CoreConcepts.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  const onHandleSelect = () => {
-    console.log("selected");
+  const onHandleSelect = (selectedButton) => {
+    console.log(selectedButton);
   };
   return (
     <div>
@@ -26,10 +26,16 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={onHandleSelect}>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => onHandleSelect("Components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => onHandleSelect("JSX")}>JSX</TabButton>
+            <TabButton onSelect={() => onHandleSelect("Props")}>
+              Props
+            </TabButton>
+            <TabButton onSelect={() => onHandleSelect("State")}>
+              State
+            </TabButton>
           </menu>
         </section>
       </main>
