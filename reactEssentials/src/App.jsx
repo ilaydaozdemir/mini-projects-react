@@ -7,10 +7,22 @@ import CoreConcepts from "./components/CoreConcepts.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  const [selectTab, setSelectTab] = useState("components");
+  const [selectTab, setSelectTab] = useState("");
   const onHandleSelect = (selectedButton) => {
     setSelectTab(selectedButton);
   };
+  let tabContent = <p>Please select a topic</p>;
+  if (selectTab) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectTab].title}</h3>
+        <p>{EXAMPLES[selectTab].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectTab].code}</code>
+        </pre>
+      </div>
+    );
+  }
   return (
     <div>
       <Header />
@@ -38,13 +50,7 @@ function App() {
               State
             </TabButton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectTab].title}</h3>
-            <p>{EXAMPLES[selectTab].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectTab].code}</code>
-            </pre>
-          </div>
+          {tabContent}
         </section>
       </main>
     </div>
