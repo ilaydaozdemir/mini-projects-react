@@ -40,25 +40,25 @@ function App() {
           <menu>
             <TabButton
               isSelected={selectTab === "components"}
-              onSelect={() => onHandleSelect("components")}
+              onClick={() => onHandleSelect("components")}
             >
               Components
             </TabButton>
             <TabButton
               isSelected={selectTab === "jsx"}
-              onSelect={() => onHandleSelect("jsx")}
+              onClick={() => onHandleSelect("jsx")}
             >
               JSX
             </TabButton>
             <TabButton
               isSelected={selectTab === "props"}
-              onSelect={() => onHandleSelect("props")}
+              onClick={() => onHandleSelect("props")}
             >
               Props
             </TabButton>
             <TabButton
               isSelected={selectTab === "state"}
-              onSelect={() => onHandleSelect("state")}
+              onClick={() => onHandleSelect("state")}
             >
               State
             </TabButton>
