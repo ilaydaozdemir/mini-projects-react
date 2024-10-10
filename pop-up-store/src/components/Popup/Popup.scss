@@ -17,11 +17,10 @@
     background-color: var(--default-green, $info-green);
     opacity: 0.85;
     padding: 1rem;
-    color: var(--default-green, $info-light-greeen);
+    color: var(--default-green, white);
     border: 1px solid var(--default-green, $info-rise-green);
     border-radius: 4px;
-    box-shadow: rgba($info-rise-green, 0.1) 0px 6px 24px 0px,
-      rgba($info-rise-green, 0.08) 0px 0px 0px 1px;
+    box-shadow: 0px 0px 4px 0.5px $info-rise-green;
   }
   .error {
     background-color: var(--default-red, $error-red);
@@ -29,8 +28,7 @@
     padding: 1rem;
     border: 1px solid var(--default-red, $error-light-red);
     border-radius: 4px;
-    box-shadow: rgba($error-rise-red, 0.1) 0px 6px 24px 0px,
-      rgba($error-rise-red, 0.08) 0px 0px 0px 1px;
+    box-shadow: 0px 0px 4px 0.5px $error-light-red;
   }
   .info {
     background-color: var(--default-blue, $info-blue);
@@ -38,8 +36,7 @@
     padding: 1rem;
     border: 1px solid var(--default-blue, $info-light-blue);
     border-radius: 4px;
-    box-shadow: rgba($info-rise-blue, 0.1) 0px 6px 24px 0px,
-      rgba($info-rise-blue, 0.08) 0px 0px 0px 1px;
+    box-shadow: 0px 0px 4px 0.5px $info-light-blue;
   }
   .warning {
     background-color: var(--default-yellow, $warning-yellow);
@@ -47,8 +44,7 @@
     padding: 1rem;
     border: 1px solid var(--default-yellow, $warning-light-yellow);
     border-radius: 4px;
-    box-shadow: rgba($warning-rise-yellow, 0.1) 0px 6px 24px 0px,
-      rgba($warning-rise-yellow, 0.08) 0px 0px 0px 1px;
+    box-shadow: 0px 0px 4px 0.5px $warning-light-yellow;
   }
 }
 .popup-header {
