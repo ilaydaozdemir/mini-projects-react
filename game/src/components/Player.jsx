@@ -6,9 +6,13 @@ export default function Player({ name, symbol }) {
   function handleClickEditing() {
     setIsEditing(true);
   }
+
   let playerName = <span className="player-name">{name}</span>;
+  let buttonCapture = "Edit";
+
   if (isEditing) {
     playerName = <input type="text" required />;
+    buttonCapture = "Save";
   }
 
   return (
@@ -17,7 +21,7 @@ export default function Player({ name, symbol }) {
         {playerName}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={handleClickEditing}>Edit</button>
+      <button onClick={handleClickEditing}>{buttonCapture}</button>
     </li>
   );
 }
