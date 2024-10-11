@@ -11,6 +11,7 @@ export default function Player({ initalName, symbol }) {
   function handleChange(event) {
     setPlayerName(event.target.value);
   }
+
   let editableName = <span className="player-name">{playerName}</span>;
   let buttonCapture = "Edit";
 
