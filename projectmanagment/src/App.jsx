@@ -17,17 +17,7 @@ function App() {
       };
     });
   }
-  function handleSelectDeleteProject(id) {
-    setProjectState((prevState) => {
-      return {
-        ...prevState,
-        selectedProjectId: undefined,
-        projects: prevState.projects.filter((project) => {
-          project.id !== prevState.selectedProjectId;
-        }),
-      };
-    });
-  }
+
   function handleStartAddProject() {
     setProjectState((prevState) => {
       return {
@@ -59,7 +49,17 @@ function App() {
       };
     });
   }
-
+  function handleSelectDeleteProject() {
+    setProjectState((prevState) => {
+      return {
+        ...prevState,
+        selectedProjectId: undefined,
+        projects: prevState.projects.filter((project) => {
+          return project.id !== prevState.selectedProjectId;
+        }),
+      };
+    });
+  }
   const selectedProject = projectState.projects.find(
     (project) => project.id === projectState.selectedProjectId
   );
