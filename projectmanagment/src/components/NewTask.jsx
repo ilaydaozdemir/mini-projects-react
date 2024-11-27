@@ -7,10 +7,10 @@ function NewTask({ onAdd }) {
     setEnteredTask(event.target.value);
   }
   function handleClick() {
+    // Gap control
     if (enteredTask.trim() !== "") {
-      // Boşluk kontrolü
       onAdd(enteredTask);
-      setEnteredTask(""); // Boş string olarak ayarlayın
+      setEnteredTask("");
     }
   }
   return (
